@@ -1,0 +1,376 @@
+// -------------------------------------
+// Kings Template: LESS > Fork Variables
+// -------------------------------------
+
+
+// Site
+@value__container--width: 1500px;
+
+
+// Feature
+@value__feature--height--desktop: 900px;
+@value__feature--height--tablet:  700px;
+@value__feature--height--mobile:  auto;
+
+
+// Global Widget Spacing
+@value__widget--spacing--desktop: 70px;
+@value__widget--spacing--laptop:  60px;
+@value__widget--spacing--tablet:  40px;
+@value__widget--spacing--mobile:  30px;
+
+
+// Image Gallery Widget
+@value__gallery--width--desktop: 20%;
+@value__gallery--width--laptop:  25%;
+@value__gallery--width--tablet:  33.333%;
+@value__gallery--width--mobile:  50%;
+
+
+// Slideshow Widget (Padding technique)
+@value__slideshow--height--desktop: 40%;
+@value__slideshow--height--tablet:  54%;
+@value__slideshow--height--mobile:  70%;
+
+
+// Fork Overrides
+// -------------------------------------
+
+
+// Relative Positioning
+.template-header {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+// Profile Widgets
+.widget[data-widget-type="feature"].bk-tpl-hidden + .template-header,
+.page--default .template-header,
+.template-header {
+
+    .profile {
+        // Typography
+        a, h1, h2, h3, p,
+        .phone-number-link,
+        .company-link,
+        .social-link:before,
+        .emailaddress__email,
+        .emailaddress__email:before,
+        .input {
+            color: @color__companyname--text;
+        }
+        .input {
+            border-bottom: 1px solid fade(@color__link--text, 30%);
+            background-color: transparent;
+            @media only screen and (max-width : 650px) {
+                border: none;
+            }
+        }
+        .button.signupform__button {
+            top: inherit;
+            color: #ffffff;
+            background-color: @color__companyname--text;
+        }
+        .button.signupform__button:hover {
+            background-color: darken(@color__companyname--text, 4%);
+        }
+    }
+
+    // Comapny Link
+    .company-link {
+        color: @color__companyname--text;
+    }
+
+    // Navigation Toggle Button
+    .navigation-toggle {
+        background-color: @color__companyname--text;
+
+        &:after, &:before {
+            background: @color__companyname--text;
+        }
+    }
+    .open .navigation-toggle {
+        background-color: transparent;
+
+        &:after, &:before {
+            background: @color__body--background;
+        }
+    }
+}
+
+// Company Link
+.company-link {
+    text-transform: inherit;
+}
+
+// Extended Navigation
+
+.widget__extendednavigation.open .navigation-body {
+    background-color: darken(@color__secondary, 10%);
+}
+
+.navigation-list--children {
+    background-color: darken(@color__secondary, 13%);
+}
+
+.navigation-body .item-name {
+    text-transform: inherit;
+}
+
+.navigation-item .item-name:hover {
+    color: @color__navigation--text--selected;
+}
+
+// Nav Icon
+button.navigation-toggle {
+
+    background-color: @color__companyname--text;
+    width: 37px;
+    padding: 22px 5px;
+    @media @tablet {
+        background-color: @color__companyname--text;
+    }
+    @media only screen and (max-width: 650px) {
+        padding: 21px 5px;
+    }
+    // Top and bottom navigation item bar
+    &:after,
+    &:before {
+        background-color: @color__companyname--text;
+    }
+    &:hover {
+        opacity: 0.6;
+    }
+
+}
+
+// Feature
+
+.feature {
+
+    .feature__headline {
+        text-transform: inherit;
+    }
+
+    .feature__button {
+        padding: 5px 35px;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        border-radius: 100px;
+        font-weight: 400;
+        border: 1px solid lighten(@color__feature-button--background, 5%);
+        font-size: bkscale(@font__button--font-size, 1.1);
+        line-height: bkscale(@font__button--line-height, 1.1);
+        @media @tablet {
+            font-size: bkscale(@font__button--font-size, 0.9);
+            line-height: bkscale(@font__button--line-height, 0.9);
+        }
+        @media @mobile {
+            font-size: bkscale(@font__button--font-size, 0.8);
+            line-height: bkscale(@font__button--line-height, 0.8);
+        }
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#896a45+0,7c4400+100 */
+        background: @color__feature-button--background; /* Old browsers */
+        background: -moz-linear-gradient(top,  lighten(@color__feature-button--background, 15%) 0%, @color__feature-button--background 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  lighten(@color__feature-button--background, 15%) 0%, @color__feature-button--background 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  lighten(@color__feature-button--background, 15%) 0%, @color__feature-button--background 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten(@color__feature-button--background, 15%)', endColorstr='@color__feature-button--background',GradientType=0 ); /* IE6-9 */
+        &:hover {
+            background: @color__feature-button--background;
+            background: -moz-linear-gradient(top,  @color__feature-button--background 0%, @color__feature-button--background 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top,  @color__feature-button--background 0%, @color__feature-button--background 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom,  @color__feature-button--background 0%, @color__feature-button--background 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@color__feature-button--background', endColorstr='@color__feature-button--background',GradientType=0 ); /* IE6-9 */
+        }
+    }
+
+}
+
+.feature-arrow {
+    display: none;
+}
+
+
+// Button
+
+.button {
+    text-transform: inherit;
+}
+
+// Dropbox button
+
+.dropbox__label {
+    color: inherit;
+    background-color: transparent;
+}
+
+// Social Icons
+
+.social-link:before {
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#896a45+0,7c4400+100 */
+    background: @color__feature-button--background; /* Old browsers */
+    background: -moz-linear-gradient(top,  lighten(@color__feature-button--background, 15%) 0%, @color__feature-button--background 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  lighten(@color__feature-button--background, 15%) 0%, @color__feature-button--background 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  lighten(@color__feature-button--background, 15%) 0%, @color__feature-button--background 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten(@color__feature-button--background, 15%)', endColorstr='@color__feature-button--background',GradientType=0 ); /* IE6-9 */
+}
+
+.social-link:hover:before {
+    background: @color__feature-button--background;
+}
+
+// Contact Form
+
+.contactform__legend {
+    position: relative;
+    padding: 26px 0;
+    text-align: inherit;
+}
+
+.contactform__form-body {
+    width: 100%;
+    padding: 0;
+}
+
+// Blog Search & Signup form
+
+.widget__blogsearch .legend,
+.widget__signupform .legend {
+    position: relative;
+    width: auto;
+    padding: 26px 0;
+    text-align: left;
+    line-height: inherit;
+}
+
+.widget__blogsearch .form-body,
+.widget__signupform .form-body {
+    padding: 0;
+    width: 100%;
+}
+
+// Blockquote
+
+.content blockquote,
+.post-body blockquote {
+    border-top: 1px solid fade(@color__link--text, 30%);
+    border-bottom: 1px solid fade(@color__link--text, 30%);
+}
+
+.content blockquote:before,
+.content blockquote:after,
+.post-body blockquote:before,
+.post-body blockquote:after {
+    color: @color__secondary;
+}
+
+// Twitter
+
+.tweet-item {
+    background-color: transparent;
+    border: 1px solid fade(@color__link--text, 30%);
+    .twitter__account-link {
+        color: @color__secondary;
+    }
+    .tweet-metadata {
+        text-transform: inherit;
+    }
+}
+
+// Responsive slideshow
+
+.responsiveslideshow__image-title,
+.imagewidget__image-title {
+    text-transform: inherit;
+}
+
+// Gallery
+
+.gallery__image-title {
+    text-transform: inherit;
+}
+
+// Blog
+
+.blogpostlist {
+    .title-link,
+    .post-excerpt p,
+    .post-footer .timestamp,
+    .read-more {
+        color: #ffffff;
+    }
+    .title-link:hover {
+        box-shadow: none;
+        opacity: .65;
+    }
+    .read-more {
+        box-shadow: none;
+    }
+    // Post Excerpt
+    .post-excerpt p {
+        font-size: @font__p--font-size;
+        line-height: @font__p--line-height;
+    }
+    .post-article {
+        background-color: lighten(@color__secondary, 15%);
+        &:nth-child(2n) {
+            background-color: lighten(@color__secondary, 10%);
+        }
+    }
+}
+
+.blogpost .post-header {
+    background-color: lighten(@color__secondary, 10%);
+}
+
+// Menu
+
+.menusections-list {
+    background-color: @color__secondary;
+    .menu-item-name:hover {
+        color: #ffffff;
+        box-shadow: inset 0px -2px 0px 0px #ffffff;
+    }
+}
+
+.menusections-list .menu-item-name,
+.menu .section-title,
+.menu p.section-description,
+.menu-subsection .section-subtitle {
+    color: #ffffff;
+}
+
+.menu-item .item-description,
+.menu-item .item-description p {
+    font-family: @font__p--font-family;
+}
+
+.menu-item--featured .item-title:before,
+.menu-item--featured .item-title:after {
+    height: 2px;
+}
+
+// Ecom
+
+.ecomproductslist__fieldset--search .input {
+    background-color: transparent;
+    box-shadow: inset 0px -1px 0px 0px fade(@color__link--text, 30%);
+}
+
+.product-actions .select-wrap {
+    background-color: transparent;
+    border: 1px solid fade(@color__link--text, 30%);
+}
+
+.summary-table .table-row:not(.table-row--heading):not(.table-row--order-total) .cell {
+    background-color: transparent;
+    box-shadow: inset 0px -1px 0px 0px fade(@color__link--text, 30%);
+}
+
+.ecomfeaturedproducts__listing-title {
+    color: #ffffff;
+}
