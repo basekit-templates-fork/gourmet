@@ -5,11 +5,20 @@
 <!-- Page Content -->
 <section class="page  page--home">
 
-	{% include "includes/hero.twig" %}
+    {% include "includes/header.twig" %}
 
 	<!-- Zone Content -->
     <div id="main-scroll" class="main-content">
         <div class="container">
+
+        {{widget('feature', 'feature', {
+            'header': 'profile',
+            'strapline': 'profile',
+            'defaultBgImg': asset("images/feature-image.jpg"),
+            'positionTopPercentage': '0',
+            'showBtn': true,
+            'buttonText': 'Lorem Ipsum'
+        })|raw}}
 
             {{zone('main')|raw}}
 

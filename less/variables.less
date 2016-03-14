@@ -1,18 +1,17 @@
 
 @color__primary:@color__link--text;
-@color__secondary: #896a45;
+@color__secondary: @color-swatch3;
 
-
-@color__body--background:#fff;
-@color__link--text:#896a45;
+@color__body--background:@color-swatch1;
+@color__link--text: @color-swatch2;
 
 
 @font__companyname--font-family:@font-swatch10-font-family;
-@font__companyname--font-size:26px;
-@font__companyname--font-weight:400;
-@font__companyname--line-height:32px;
-@font__companyname--letter-spacing:2px;
-@color__companyname--text: #896a45;
+@font__companyname--font-size:@font-swatch10-font-size;
+@font__companyname--font-weight:@font-swatch10-font-weight;
+@font__companyname--line-height:@font-swatch10-line-height;
+@font__companyname--letter-spacing:@font-swatch10-letter-spacing;
+@color__companyname--text: @font-swatch10-color;
 
 
 @font__h1--font-family:@font-swatch1-font-family;
@@ -27,7 +26,7 @@
 @font__h2--font-size:@font-swatch2-font-size;
 @font__h2--font-weight:@font-swatch2-font-weight;
 @font__h2--line-height:@font-swatch2-line-height;
-@font__h2--letter-spacing:inherit;
+@font__h2--letter-spacing:0px;
 @color__h2--text: #56524C;
 
 
@@ -35,7 +34,7 @@
 @font__h3--font-size:22px;
 @font__h3--font-weight:@font-swatch3-font-weight;
 @font__h3--line-height:34px;
-@font__h3--letter-spacing:inherit;
+@font__h3--letter-spacing:0px;
 @color__h3--text: #56524C;
 
 
@@ -48,14 +47,14 @@
 
 
 @font__p--font-family:@font-swatch5-font-family;
-@font__p--font-size:15px;
-@font__p--font-weight:400;
-@font__p--line-height:30px;
+@font__p--font-size:@font-swatch5-font-size;
+@font__p--font-weight:@font-swatch5-font-weight;
+@font__p--line-height:@font-swatch5-line-height;
 @font__p--letter-spacing:@font-swatch5-letter-spacing;
-@color__p--text:#747682;
+@color__p--text:@font-swatch5-color;
 
 
-@color__header--background: #ffffff;
+@color__header--background: #000000;
 
 @color__navigation--icon: #fff;
 @font__navigation--font-family:@font-swatch6-font-family;
@@ -82,20 +81,20 @@
 
 @color__feature-content--background: #26292f;
 @font__feature-headline--font-family:@font-swatch8-font-family;
-@font__feature-headline--font-size:64px;
+@font__feature-headline--font-size:45px;
 @font__feature-headline--font-weight:400;
-@font__feature-headline--line-height:74px;
+@font__feature-headline--line-height:55px;
 @font__feature-headline--letter-spacing:6px;
 @color__feature-headline--text:#fff;
 
 @font__feature-strapline--font-family:@font-swatch9-font-family;
-@font__feature-strapline--font-size:18px;
+@font__feature-strapline--font-size:24px;
 @font__feature-strapline--font-weight:400;
 @font__feature-strapline--line-height:34px;
 @font__feature-strapline--letter-spacing:@font-swatch9-letter-spacing;
 @color__feature-strapline--text:#ffffff;
 
-@color__feature-button--border:fade(@color__body--background, 10%);
+@color__feature-button--border:fade(@color__body--background, 50%);
 @color__feature-button--background: @color__button--background;
 @color__feature-button--background--hover:fade(@color__body--background, 4%);
 @color__feature-button--text:#fff;

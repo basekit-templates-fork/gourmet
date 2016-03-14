@@ -4,20 +4,20 @@
 
 
 // Site
-@value__container--width: 1500px;
+@value__container--width: 960px;
 
 
 // Feature
-@value__feature--height--desktop: 900px;
-@value__feature--height--tablet:  700px;
+@value__feature--height--desktop: 500px;
+@value__feature--height--tablet:  400px;
 @value__feature--height--mobile:  auto;
 
 
 // Global Widget Spacing
-@value__widget--spacing--desktop: 70px;
-@value__widget--spacing--laptop:  60px;
-@value__widget--spacing--tablet:  40px;
-@value__widget--spacing--mobile:  30px;
+@value__widget--spacing--desktop: 0;
+@value__widget--spacing--laptop:  0;
+@value__widget--spacing--tablet:  0;
+@value__widget--spacing--mobile:  0;
 
 
 // Image Gallery Widget
@@ -36,12 +36,115 @@
 // Fork Overrides
 // -------------------------------------
 
+body {
+    background-color: @color__body--background;
+}
+
+.site-container {
+    width: 100%;
+    max-width: 100%;
+    background-color: transparent;
+}
+
+.main-content {
+    max-width: @value__container--width;
+    margin: 0 auto;
+    background-color: transparent;
+    @media only screen and (max-width: 1024px) {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+// Widgets
+
+.main-content .widget {
+    margin: 0 0 20px;
+
+    @media @bp-global-medium {
+        margin:  0 0 20px;
+    }
+    @media @tablet {
+        margin:  0 0 20px;
+    }
+    @media @mobile {
+        margin:  0 0 20px;
+    }
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
 
 // Relative Positioning
 .template-header {
     position: relative;
+    max-width: inherit;
     width: 100%;
     margin: 0 auto;
+    padding: 10px 5%;
+    @media only screen and (max-width: 650px) {
+        padding: 0 0 20px;
+    }
+}
+
+// Header Background colour
+.widget[data-widget-type="feature"].bk-tpl-hidden + .template-header,
+.page--default .template-header,
+.template-header {
+    background-color: @color__header--background;
+    border-bottom: @color__header--background;
+    @media @mobile {
+        .flex-item:first-child,
+        .flex-item:last-child {
+            background-color: @color__header--background;
+            border-bottom: 1px solid lighten(@color__header--background, 20%);
+        }
+    }
+}
+
+// Feature
+
+@color__feature-button--background: transparent;
+
+.feature {
+
+    max-width: 960px;
+    margin: 20px auto;
+
+    .feature__headline {
+        text-transform: inherit;
+    }
+
+    .button {
+        padding: 0;
+        border: none;
+        border-bottom: 1px solid @color__feature-button--border;
+    }
+
+}
+
+.feature-arrow {
+    display: none;
+}
+
+.feature,
+.feature__content-wrap {
+    height: @value__feature--height--desktop;
+    @media @bp-global-medium {
+        height: 450px;
+    }
+    @media @tablet {
+        height: @value__feature--height--tablet;
+    }
+    @media @mobile {
+        height: @value__feature--height--mobile;
+    }
+}
+
+.feature__background-image {
+    min-height: inherit;
+    background-attachment: inherit;
 }
 
 // Profile Widgets
@@ -122,74 +225,7 @@
     color: @color__navigation--text--selected;
 }
 
-// Nav Icon
-button.navigation-toggle {
 
-    background-color: @color__companyname--text;
-    width: 37px;
-    padding: 22px 5px;
-    @media @tablet {
-        background-color: @color__companyname--text;
-    }
-    @media only screen and (max-width: 650px) {
-        padding: 21px 5px;
-    }
-    // Top and bottom navigation item bar
-    &:after,
-    &:before {
-        background-color: @color__companyname--text;
-    }
-    &:hover {
-        opacity: 0.6;
-    }
-
-}
-
-// Feature
-
-.feature {
-
-    .feature__headline {
-        text-transform: inherit;
-    }
-
-    .feature__button {
-        padding: 5px 35px;
-        -webkit-border-radius: 100px;
-        -moz-border-radius: 100px;
-        border-radius: 100px;
-        font-weight: 400;
-        border: 1px solid lighten(@color__feature-button--background, 5%);
-        font-size: bkscale(@font__button--font-size, 1.1);
-        line-height: bkscale(@font__button--line-height, 1.1);
-        @media @tablet {
-            font-size: bkscale(@font__button--font-size, 0.9);
-            line-height: bkscale(@font__button--line-height, 0.9);
-        }
-        @media @mobile {
-            font-size: bkscale(@font__button--font-size, 0.8);
-            line-height: bkscale(@font__button--line-height, 0.8);
-        }
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#896a45+0,7c4400+100 */
-        background: @color__feature-button--background; /* Old browsers */
-        background: -moz-linear-gradient(top,  lighten(@color__feature-button--background, 15%) 0%, @color__feature-button--background 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(top,  lighten(@color__feature-button--background, 15%) 0%, @color__feature-button--background 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom,  lighten(@color__feature-button--background, 15%) 0%, @color__feature-button--background 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten(@color__feature-button--background, 15%)', endColorstr='@color__feature-button--background',GradientType=0 ); /* IE6-9 */
-        &:hover {
-            background: @color__feature-button--background;
-            background: -moz-linear-gradient(top,  @color__feature-button--background 0%, @color__feature-button--background 100%); /* FF3.6-15 */
-            background: -webkit-linear-gradient(top,  @color__feature-button--background 0%, @color__feature-button--background 100%); /* Chrome10-25,Safari5.1-6 */
-            background: linear-gradient(to bottom,  @color__feature-button--background 0%, @color__feature-button--background 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@color__feature-button--background', endColorstr='@color__feature-button--background',GradientType=0 ); /* IE6-9 */
-        }
-    }
-
-}
-
-.feature-arrow {
-    display: none;
-}
 
 
 // Button
@@ -203,24 +239,6 @@ button.navigation-toggle {
 .dropbox__label {
     color: inherit;
     background-color: transparent;
-}
-
-// Social Icons
-
-.social-link:before {
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-    border-radius: 100px;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#896a45+0,7c4400+100 */
-    background: @color__feature-button--background; /* Old browsers */
-    background: -moz-linear-gradient(top,  lighten(@color__feature-button--background, 15%) 0%, @color__feature-button--background 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  lighten(@color__feature-button--background, 15%) 0%, @color__feature-button--background 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  lighten(@color__feature-button--background, 15%) 0%, @color__feature-button--background 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten(@color__feature-button--background, 15%)', endColorstr='@color__feature-button--background',GradientType=0 ); /* IE6-9 */
-}
-
-.social-link:hover:before {
-    background: @color__feature-button--background;
 }
 
 // Contact Form
@@ -260,15 +278,39 @@ button.navigation-toggle {
 
 .content blockquote,
 .post-body blockquote {
-    border-top: 1px solid fade(@color__link--text, 30%);
-    border-bottom: 1px solid fade(@color__link--text, 30%);
+    width: 100%;
+    padding: 50px 80px;
+    color: @color__companyname--text;
+    font-family: @font__p--font-family;
+    font-size: @font__p--font-size;
+    font-weight: @font__p--font-weight;
+    line-height: @font__p--line-height;
+    letter-spacing: @font__p--letter-spacing;
+    text-align: left;
+    border-top: none;
+    border-bottom: none;
+    background-color: @color__header--background;
 }
 
 .content blockquote:before,
 .content blockquote:after,
 .post-body blockquote:before,
 .post-body blockquote:after {
-    color: @color__secondary;
+    color: @color-swatch1;
+    top: 30px;
+    left: 35px;
+}
+
+// Social icons
+
+.social-link:before {
+    background-color: transparent;
+    color: @color-swatch4;
+}
+
+.social-link:hover:before {
+    background-color: transparent;
+    color: @color-swatch2;
 }
 
 // Twitter
@@ -284,6 +326,41 @@ button.navigation-toggle {
     }
 }
 
+// Page Title
+    .pagetitle {
+        padding: 15px 70px;
+    }
+
+// Image Widget
+
+.imagewidget .caption {
+    position: relative;
+    background-color: transparent;
+    text-align: inherit;
+    padding: 10px 0;
+    .image-title {
+        max-width: inherit;
+        text-align: inherit;
+        color: @color__h3--text;
+        font-family:@font__h3--font-family;
+        font-size: @font__h3--font-size;
+        font-weight: @font__h3--font-weight;
+        line-height: @font__h3--line-height;
+        letter-spacing: @font__h3--letter-spacing;
+    }
+    .image-description {
+        max-width: inherit;
+        text-align: inherit;
+        color: @color__p--text;
+        font-family: @font__p--font-family;
+        font-size: @font__p--font-size;
+        font-weight: @font__p--font-weight;
+        line-height: @font__p--line-height;
+        letter-spacing: @font__p--letter-spacing;
+    }
+
+}
+
 // Responsive slideshow
 
 .responsiveslideshow__image-title,
@@ -295,6 +372,76 @@ button.navigation-toggle {
 
 .gallery__image-title {
     text-transform: inherit;
+}
+
+// Gallery Layout
+// Gallery List
+.gallery-list {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: -2%;
+}
+
+// Gallery Item
+.gallery__gallery-item {
+    position: relative;
+    width: 32%;
+    margin-bottom: 2%;
+    // Display 100% at mobile
+    @media @mobile {
+        width: 100%;
+        margin-bottom: 4%;
+    }
+}
+
+.gallery__image {
+    display: none;
+}
+
+.gallery {
+    .image-title {
+        color: @color__h3--text;
+        font-family:@font__h3--font-family;
+        font-size: @font__h3--font-size;
+        font-weight: @font__h3--font-weight;
+        line-height: @font__h3--line-height;
+        letter-spacing: @font__h3--letter-spacing;
+    }
+    .image-description {
+        color: @color__p--text;
+        font-family: @font__p--font-family;
+        font-size: @font__p--font-size;
+        font-weight: @font__p--font-weight;
+        line-height: @font__p--line-height;
+        letter-spacing: @font__p--letter-spacing;
+    }
+}
+
+
+// Gallery Images
+// --------------
+
+// Use Background-image Method
+.gallery__image-link {
+    display: block;
+    height: 280px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    @media @tablet {
+        height: 210px;
+    }
 }
 
 // Blog
@@ -332,29 +479,31 @@ button.navigation-toggle {
 
 // Menu
 
-.menusections-list {
-    background-color: @color__secondary;
-    .menu-item-name:hover {
-        color: #ffffff;
-        box-shadow: inset 0px -2px 0px 0px #ffffff;
+.section-header,
+.menu-section--featured .section-header {
+    background-color: transparent;
+    padding: 30px 0;
+    .section-title {
+        color: @color-swatch4;
     }
-}
-
-.menusections-list .menu-item-name,
-.menu .section-title,
-.menu p.section-description,
-.menu-subsection .section-subtitle {
-    color: #ffffff;
-}
-
-.menu-item .item-description,
-.menu-item .item-description p {
-    font-family: @font__p--font-family;
 }
 
 .menu-item--featured .item-title:before,
 .menu-item--featured .item-title:after {
-    height: 2px;
+    height: 1px;
+}
+
+.menu-item {
+    width: 33%;
+    .item-title {
+        color: @color-swatch4;
+    }
+}
+
+.menusections-list {
+    padding: 0;
+    color: @color-swatch4;
+    background-color: transparent;
 }
 
 // Ecom
@@ -377,3 +526,11 @@ button.navigation-toggle {
 .ecomfeaturedproducts__listing-title {
     color: #ffffff;
 }
+
+// Footer
+
+.template-footer {
+    background-color: darken(@color__body--background, 4%);
+    border-top: 1px solid darken(@color__body--background, 10%);
+}
+
