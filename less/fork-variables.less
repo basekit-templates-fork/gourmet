@@ -56,6 +56,17 @@ body {
     }
 }
 
+// Forms
+
+input[type="search"],
+input[type="email"],
+input[type="password"],
+.input--single-line,
+.input--search,
+textarea {
+    box-shadow: inset 0px -1px 0px 0px darken(@color__body--background, 10%);
+}
+
 // Widgets
 
 .main-content .widget {
@@ -488,6 +499,12 @@ body {
     }
 }
 
+.menu-subsection {
+    margin-top: 20px;
+    padding: 0;
+    border-top: none;
+}
+
 .menu-item--featured .item-title:before,
 .menu-item--featured .item-title:after {
     height: 1px;
@@ -495,6 +512,7 @@ body {
 
 .menu-item {
     width: 33%;
+    padding: 20px;
     .item-title {
         color: @color-swatch4;
     }
@@ -524,7 +542,15 @@ body {
 }
 
 .ecomfeaturedproducts__listing-title {
-    color: #ffffff;
+    padding: 26px 0;
+    text-align: center;
+    color: @color-swatch4;
+    background-color: transparent;
+}
+
+.product-item {
+    border-right: none;
+    box-shadow: none;
 }
 
 // Footer
