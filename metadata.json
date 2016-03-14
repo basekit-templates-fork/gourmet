@@ -180,7 +180,7 @@
             "color__navigation--text--selected": "#ffffff"
         },
         "form": {
-            "color__form-legend--text" : "@color__secondary",
+            "color__form-legend--text" : "@color__secondary"
         },
         "button": {
             "color__button--background" : "@color__secondary",
