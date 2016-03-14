@@ -181,7 +181,6 @@
         },
         "form": {
             "color__form-legend--text" : "@color__secondary",
-            "color__form-legend--background": "transparent"
         },
         "button": {
             "color__button--background" : "@color__secondary",
@@ -229,7 +228,6 @@
             "color__menu-section-featured--background" : "@color__secondary"
         },
         "blog": {
-            "color__blogsearch-legend--background" : "@color__form-legend--background",
             "color__blogsearch-legend--text" : "@color__form-legend--text",
             "color__blogpost-title--background" : "@color__secondary",
             "color__blogpost-title--text" : "#ffffff"
