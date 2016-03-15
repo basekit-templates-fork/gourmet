@@ -20,13 +20,6 @@
 @value__widget--spacing--mobile:  0;
 
 
-// Image Gallery Widget
-@value__gallery--width--desktop: 20%;
-@value__gallery--width--laptop:  25%;
-@value__gallery--width--tablet:  33.333%;
-@value__gallery--width--mobile:  50%;
-
-
 // Slideshow Widget (Padding technique)
 @value__slideshow--height--desktop: 40%;
 @value__slideshow--height--tablet:  54%;
@@ -329,6 +322,12 @@ textarea {
     border-top: none;
     border-bottom: none;
     background-color: @color__header--background;
+    color: #ffffff;
+    font-family: @font__p--font-family;
+    font-size: @font__h4--font-size;
+    font-weight: @font__p--font-weight;
+    line-height: @font__h4--line-height;
+    letter-spacing: @font__p--letter-spacing;
     p {
         color: #ffffff;
         font-family: @font__p--font-family;
@@ -745,14 +744,33 @@ textarea {
     padding: 0;
 }
 
+.responsivecolumns .product-list {
+    border-left: none;
+    border-top: none;
+}
+
+.responsivecolumns .ecomproductslist__fieldset--filters {
+    .form-body,
+    .form-group {
+        width: 100%;
+        display: block;
+    }
+    .form-group {
+        box-shadow: inset 0px -1px 0px 0px fade(@color-swatch5, 30%);
+    }
+    .select-wrap {
+        max-width: inherit;
+    }
+}
+
 .product-actions .select-wrap {
     background-color: transparent;
-    border: 1px solid fade(@color__link--text, 30%);
+    border: 1px solid fade(@color-swatch5, 30%);
 }
 
 .summary-table .table-row:not(.table-row--heading):not(.table-row--order-total) .cell {
     background-color: transparent;
-    box-shadow: inset 0px -1px 0px 0px fade(@color__link--text, 30%);
+    box-shadow: inset 0px -1px 0px 0px fade(@color-swatch5, 30%);
     @media only screen and (max-width: 680px) {
         box-shadow: none;
     }
