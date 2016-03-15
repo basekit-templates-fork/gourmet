@@ -477,6 +477,7 @@ textarea {
         line-height: @font__p--line-height;
     }
     .post-article {
+        width: 50%;
         background-color: lighten(@color__secondary, 15%);
         &:nth-child(2n) {
             background-color: lighten(@color__secondary, 10%);
@@ -490,8 +491,14 @@ textarea {
 
 // Menu
 
+@color__menusections--background : transparent;
+@color__menu--background : transparent;
+@color__menu-section-header--background : transparent;
+@color__menu-section-featured--background : transparent;
+
 .section-header,
-.menu-section--featured .section-header {
+.menu-section--featured .section-header,
+.menu-subsection .section-header {
     background-color: transparent;
     padding: 30px 0;
     .section-title {
@@ -507,14 +514,25 @@ textarea {
 
 .menu-item--featured .item-title:before,
 .menu-item--featured .item-title:after {
+    width: 100%;
     height: 1px;
 }
 
 .menu-item {
     width: 33%;
-    padding: 20px;
+    padding: 0 30px 30px 0;
+    text-align: left;
+    border-right: none;
+    box-shadow: none;
+    .item-header {
+        text-align: left;
+        padding: 1em 0;
+    }
     .item-title {
         color: @color-swatch4;
+    }
+    .item-subtitle {
+        font-size: 16px;
     }
 }
 
@@ -522,6 +540,10 @@ textarea {
     padding: 0;
     color: @color-swatch4;
     background-color: transparent;
+}
+
+.menu-section .section-footer {
+    padding: 30px 0;
 }
 
 // Ecom
