@@ -24,7 +24,7 @@
             "color3":"#333333",
             "color4":"#565553",
             "color5":"#727475",
-            "color6":"#ffffff",
+            "color6":"#C2B9AE",
             "color7":"#ADB1B5"
         }
     },
@@ -48,9 +48,9 @@
         },
         "font3": {
             "font-family": "\"PT Sans\", Tahoma, Geneva, sans-serif",
-            "font-size": "22px",
+            "font-size": "20px",
             "font-weight": "400",
-            "line-height": "42px",
+            "line-height": "30px",
             "color": "@color-swatch4",
             "letter-spacing": "0px"
         },
@@ -58,28 +58,28 @@
             "font-family": "\"PT Sans\", Tahoma, Geneva, sans-serif",
             "font-size": "20px",
             "font-weight": "400",
-            "line-height": "36px",
+            "line-height": "30px",
             "color": "@color-swatch4",
             "letter-spacing": "0px"
         },
         "font5": {
             "font-family": "\"PT Serif\", Georgia, serif",
-            "font-size": "18px",
+            "font-size": "16px",
             "font-weight": "400",
-            "line-height": "30px",
+            "line-height": "28px",
             "color": "@color-swatch5",
             "letter-spacing": "0px"
         },
         "font6": {
             "font-family": "\"PT Sans\", Tahoma, Geneva, sans-serif",
-            "font-size": "18px",
-            "font-weight": "400",
-            "line-height": "26px",
+            "font-size": "20px",
+            "font-weight": "700",
+            "line-height": "30px",
             "color": "@color-swatch6",
-            "color-hover": "@color-swatch6",
-            "letter-spacing": "0px",
-            "background-color": "@color-swatch3",
-            "background-color-hover": "darken(@color-swatch3,8%)"
+            "color-hover": "lighten(@color-swatch1,50%)",
+            "letter-spacing": "2px",
+            "background-color": "transparent",
+            "background-color-hover": "transparent"
         },
         "font7": {
             "font-family": "\"PT Serif\", Georgia, serif",
@@ -133,32 +133,32 @@
         },
         "typography": {
             "font__h1--font-family": "@font-swatch1-font-family",
-            "font__h1--font-size": "30px",
+            "font__h1--font-size": "@font-swatch1-font-size",
             "font__h1--font-weight": "@font-swatch1-font-weight",
-            "font__h1--line-height": "44px",
+            "font__h1--line-height": "@font-swatch1-line-height",
             "font__h1--letter-spacing": "@font-swatch1-letter-spacing",
-            "color__h1--text": "#56524C",
+            "color__h1--text": "@font-swatch1-color",
 
             "font__h2--font-family" : "@font-swatch2-font-family",
             "font__h2--font-size" : "@font-swatch2-font-size",
             "font__h2--font-weight" : "@font-swatch2-font-weight",
             "font__h2--line-height" : "@font-swatch2-line-height",
-            "font__h2--letter-spacing" : "inherit",
-            "color__h2--text": "#56524C",
+            "font__h2--letter-spacing" : "@font-swatch2-letter-spacing",
+            "color__h2--text": "@font-swatch2-color",
 
             "font__h3--font-family" : "@font-swatch3-font-family",
-            "font__h3--font-size" : "22px",
+            "font__h3--font-size" : "@font-swatch3-font-size",
             "font__h3--font-weight" : "@font-swatch3-font-weight",
-            "font__h3--line-height" : "34px",
+            "font__h3--line-height" : "@font-swatch3-line-height",
             "font__h3--letter-spacing" : "inherit",
-            "color__h3--text": "#56524C",
+            "color__h3--text": "@font-swatch3-color",
 
             "font__h4--font-family" : "@font-swatch4-font-family",
             "font__h4--font-size" : "@font-swatch4-font-size",
             "font__h4--font-weight" : "@font-swatch4-font-weight",
             "font__h4--line-height" : "@font-swatch4-line-height",
             "font__h4--letter-spacing" : "@font-swatch4-letter-spacing",
-            "color__h4--text": "#56524C",
+            "color__h4--text": "@font-swatch4-color",
 
             "font__p--font-family" : "@font-swatch5-font-family",
             "font__p--font-size" : "@font-swatch5-font-size",
@@ -172,12 +172,12 @@
         },
         "navigation": {
             "font__navigation--font-family": "@font-swatch6-font-family",
-            "font__navigation--font-size": "20px",
-            "font__navigation--font-weight": "700",
-            "font__navigation--line-height": "26px",
-            "font__navigation--letter-spacing": "2px",
-            "color__navigation--text": "#C2B9AE",
-            "color__navigation--text--selected": "#ffffff"
+            "font__navigation--font-size": "@font-swatch6-font-size",
+            "font__navigation--font-weight": "@font-swatch6-font-weight",
+            "font__navigation--line-height": "@font-swatch6-line-height",
+            "font__navigation--letter-spacing": "@font-swatch6-letter-spacing",
+            "color__navigation--text": "@font-swatch6-color",
+            "color__navigation--text--selected": "@font-swatch6-color-hover"
         },
         "form": {
             "color__form-legend--text" : "@color-swatch4"
