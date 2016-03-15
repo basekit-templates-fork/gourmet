@@ -154,6 +154,10 @@ textarea {
     }
 }
 
+.feature__content-wrap {
+    background-color: fade(@color__feature-content--background, 30%);
+}
+
 .feature__background-image {
     min-height: inherit;
     background-attachment: inherit;
@@ -165,6 +169,7 @@ textarea {
 .template-header {
 
     .profile {
+        display: inline-block;
         // Typography
         a, h1, h2, h3, p,
         .phone-number-link,
@@ -174,10 +179,9 @@ textarea {
         .emailaddress__email:before,
         .input {
             color: @color__companyname--text;
+            text-transform: inherit;
         }
         .input {
-            border-bottom: 1px solid fade(@color__link--text, 30%);
-            background-color: transparent;
             @media only screen and (max-width : 650px) {
                 border: none;
             }
@@ -185,10 +189,13 @@ textarea {
         .button.signupform__button {
             top: inherit;
             color: #ffffff;
-            background-color: @color__companyname--text;
+            @media @mobile {
+                border-left: 1px solid rgba(241,241,241,0.3);
+                border-right: 1px solid rgba(241,241,241,0.3);
+            }
         }
         .button.signupform__button:hover {
-            background-color: darken(@color__companyname--text, 4%);
+            background-color: lighten(@color__header--background, 15%);
         }
     }
 
@@ -329,12 +336,16 @@ textarea {
 
 .tweet-item {
     background-color: transparent;
-    border: 1px solid fade(@color__link--text, 30%);
+    border: 1px solid fade(@color-swatch4, 30%);
+    padding: 30px;
     .twitter__account-link {
         color: @color__secondary;
     }
     .tweet-metadata {
         text-transform: inherit;
+    }
+    .tweet-metadata a {
+        color: @color__link--text;
     }
 }
 
@@ -525,6 +536,12 @@ textarea {
     text-align: left;
     border-right: none;
     box-shadow: none;
+    @media @tablet {
+        width: 48%;
+    }
+    @media @mobile {
+        width: 100%;
+    }
     .item-header {
         text-align: left;
         padding: 1em 0;
@@ -550,8 +567,19 @@ textarea {
 // Ecom
 
 .ecomproductslist__fieldset--search .input {
-    background-color: transparent;
-    box-shadow: inset 0px -1px 0px 0px fade(@color__link--text, 30%);
+    background-color: #ffffff;
+    box-shadow: none;
+}
+
+.widget__ecomproductslist .form .fieldset--search {
+    padding: 0 20px 0 0;
+    @media only screen and (max-width : 1024px) {
+        padding: 0 0 20px 0;
+    }
+}
+
+.ecomproductslist__fieldset--filters {
+    padding: 0;
 }
 
 .product-actions .select-wrap {
@@ -562,6 +590,13 @@ textarea {
 .summary-table .table-row:not(.table-row--heading):not(.table-row--order-total) .cell {
     background-color: transparent;
     box-shadow: inset 0px -1px 0px 0px fade(@color__link--text, 30%);
+    @media only screen and (max-width: 680px) {
+        box-shadow: none;
+    }
+}
+
+.summary-table .table-row {
+    background-color: transparent;
 }
 
 .ecomfeaturedproducts__listing-title {
